@@ -46,7 +46,14 @@
 
           <div class="top-actions">
             <button class="upload-btn">Upload</button>
-            <div class="avatar">A</div>
+            <div class="user-profile">
+              <button id="avatar-btn" class="avatar">?</button>
+              <div id="user-menu" class="user-menu" style="display: none;">
+                <a href="#" class="menu-item">Profile</a>
+                <a href="#" class="menu-item">Settings</a>
+                <a href="#" id="logout-btn" class="menu-item logout">Logout</a>
+              </div>
+            </div>
           </div>
         </header>
 
@@ -134,5 +141,36 @@
         </section>
       </main>
     </div>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="auth-modal">
+      <div class="auth-container">
+        <button id="close-auth" class="close-auth">✕</button>
+        <h2 id="auth-title">Sign in to Clipper</h2>
+        
+        <form id="auth-form" data-mode="login">
+          <div class="form-group">
+            <label for="email-input">Email</label>
+            <input type="email" id="email-input" required />
+          </div>
+
+          <div class="form-group">
+            <label for="display-name-input">Display Name</label>
+            <input type="text" id="display-name-input" style="display: none;" />
+          </div>
+
+          <div class="form-group">
+            <label for="password-input">Password</label>
+            <input type="password" id="password-input" required />
+          </div>
+
+          <button type="submit" class="primary" style="width: 100%; margin-top: 12px;">Continue</button>
+        </form>
+
+        <div id="auth-toggle" class="auth-toggle">Need an account? <a href="#">Sign up</a></div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
   </body>
 </html>
